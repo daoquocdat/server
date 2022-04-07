@@ -1,10 +1,12 @@
 import {Router} from 'express';
 const router = Router();
 
-import {getUsers, createUser, deleteUser} from '../controllers/Users'
-
+import {getUsers, register, deleteUser, login} from '../controllers/Users'
+import {requireAuth} from '../middlewares/userMiddleware'
 router.get('/', getUsers);
-router.post('/createUser', createUser);
-router.delete('/deleteUser/:id', deleteUser)
+router.get('/users', getUsers);
+router.post('/register', register);
+router.post('/login', login);
+router.delete('/deleteUser/:id',requireAuth, deleteUser)
 
 export default router;
