@@ -8,7 +8,7 @@ import userRouter from "./routes/user";
 import {User} from "./entity/User";
 
 const app =  express();
-
+const port = process.env.PORT || 4000
 createConnection().then(async connection => {  
     console.log("connect successfully!")
 }).catch(error => console.log(error));
@@ -18,5 +18,5 @@ app.use(userRouter);
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static(__dirname));
 
-app.listen(4000);
+app.listen(port);
 console.log("http://localhost:4000");
