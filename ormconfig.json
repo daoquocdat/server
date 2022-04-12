@@ -1,12 +1,18 @@
 {
    "type": "postgres",
-   "host": "localhost",
+   "host": "ec2-44-194-4-127.compute-1.amazonaws.com",
    "port": 5432,
-   "username": "postgres",
-   "password": "postgres",
-   "database": "demo",
+   "username": "svopdsgsgeanla",
+   "password": "9d1e3bea063e6ac91ec53250ce24f05209cfac29f16e1b32f35d8e0bd97a25ef",
+   "database": "dfr8vp0ts76rp1",
    "synchronize": true,
    "logging": false,
+   "extra": {
+      "ssl": {
+         "require": true,
+         "rejectUnauthorized": false
+      }
+   },
    "entities": [
       "src/entity/**/*.ts"
    ],

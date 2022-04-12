@@ -2,7 +2,7 @@ import {Response, Request} from 'express';
 import * as bcrypt from 'bcrypt';
 import {getRepository} from 'typeorm';
 import {User} from '../entity/User';
-import jwt from 'jsonwebtoken'
+import * as jwt from 'jsonwebtoken'
 
 const maxAge = 3*24*60*60
 const createToken = (id) =>{

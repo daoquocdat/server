@@ -1,4 +1,4 @@
-import jwt from 'jsonwebtoken'
+import * as jwt from 'jsonwebtoken'
 import * as express from 'express'
 export const requireAuth = (req, res, next) =>{
     const token = req.cookies.jwt
