@@ -14,6 +14,11 @@ createConnection().then(async connection => {
 }).catch(error => console.log(error));
 app.use(express.json());
 app.use(cors({origin:"https://serverappnodejs.herokuapp.com", credentials: true}));
+app.all('/', function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    next()
+});
 app.use(userRouter);
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static(__dirname));
