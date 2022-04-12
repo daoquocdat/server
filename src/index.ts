@@ -13,7 +13,7 @@ createConnection().then(async connection => {
     console.log("connect successfully!")
 }).catch(error => console.log(error));
 app.use(express.json());
-app.use(cors({origin:"http://localhost:3000", credentials: true}));
+app.use(cors({origin:"https://serverappnodejs.herokuapp.com", credentials: true}));
 app.use(userRouter);
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static(__dirname));
